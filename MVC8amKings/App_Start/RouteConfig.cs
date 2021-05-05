@@ -12,8 +12,8 @@ namespace MVC8amKings
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapMvcAttributeRoutes();
+            routes.IgnoreRoute("new/helloworld4");
+          
 
             routes.MapRoute(
              name: "Default",
@@ -21,11 +21,7 @@ namespace MVC8amKings
              defaults: new { controller = "new", action = "helloworld", id = UrlParameter.Optional }
          );
 
-            routes.MapRoute(
-                name: "Default1",
-                url: "pistahouse/cake",
-                defaults: new { controller = "new", action = "helloworld", id = UrlParameter.Optional }
-            );
+           
 
            
         }
