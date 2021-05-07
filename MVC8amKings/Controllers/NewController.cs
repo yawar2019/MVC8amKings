@@ -161,7 +161,7 @@ namespace MVC8amKings.Controllers
             return View(listEmp);
         }
 
-        public ActionResult sendName6()
+        public ViewResult sendName6()
         {
             EmployeeModel obj = new EmployeeModel();
             obj.EmpId = 1;
@@ -206,10 +206,17 @@ namespace MVC8amKings.Controllers
             listdept.Add(dept1);
             listdept.Add(dept2);
 
+            EmpDept empdeptObj = new Models.EmpDept();
+            empdeptObj.emp =listEmp;
+            empdeptObj.dept =listdept;
 
 
+            return View(empdeptObj);
+        }
 
-            return View(listEmp);
+        public ViewResult getmeView() {
+
+            return View();
         }
     }
 }
