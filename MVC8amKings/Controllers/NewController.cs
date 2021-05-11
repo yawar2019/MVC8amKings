@@ -161,7 +161,7 @@ namespace MVC8amKings.Controllers
             return View(listEmp);
         }
 
-        public ViewResult sendName6()
+        public ActionResult sendName6()
         {
             EmployeeModel obj = new EmployeeModel();
             obj.EmpId = 1;
@@ -214,8 +214,21 @@ namespace MVC8amKings.Controllers
             return View(empdeptObj);
         }
 
-        public ViewResult getmeView() {
+        public RedirectResult getmeView() {
 
+            return Redirect("http://www.google.com");
+        }
+
+        public RedirectResult getmeView1()
+        {
+            return Redirect("~/new/getmeView2?id=1211");
+        }
+        public ActionResult getmeView2(int? id)
+        {
+            return Content(id.ToString());
+        }
+
+        public ActionResult getmeView3() {
             return View();
         }
     }
