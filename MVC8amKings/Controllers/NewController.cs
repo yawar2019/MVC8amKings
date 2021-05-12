@@ -11,7 +11,8 @@ namespace MVC8amKings.Controllers
         // GET: New
         [Route("Superman/shopping")]
         [Route("batman/cricket")]
-        public string  helloworld() {
+        public string helloworld()
+        {
 
             return "Hello to All";
         }
@@ -32,7 +33,7 @@ namespace MVC8amKings.Controllers
             return 1211;
         }
 
-        
+
         public ActionResult getView()
         {
 
@@ -45,7 +46,7 @@ namespace MVC8amKings.Controllers
             return View("Contact");
         }
 
-       
+
         public ActionResult getViewofDefault()
         {
 
@@ -54,9 +55,10 @@ namespace MVC8amKings.Controllers
         public string helloworld12(string id)
         {
 
-            return "Hello to All "+ id;
+            return "Hello to All " + id;
         }
-        public ActionResult sendName() {
+        public ActionResult sendName()
+        {
 
             ViewBag.Cricket = "Adam Gilcrist";
             return View();
@@ -122,7 +124,7 @@ namespace MVC8amKings.Controllers
 
             // object model = obj;
 
-          
+
             return View(obj);
         }
 
@@ -207,14 +209,15 @@ namespace MVC8amKings.Controllers
             listdept.Add(dept2);
 
             EmpDept empdeptObj = new Models.EmpDept();
-            empdeptObj.emp =listEmp;
-            empdeptObj.dept =listdept;
+            empdeptObj.emp = listEmp;
+            empdeptObj.dept = listdept;
 
 
             return View(empdeptObj);
         }
 
-        public RedirectResult getmeView() {
+        public RedirectResult getmeView()
+        {
 
             return Redirect("http://www.google.com");
         }
@@ -228,8 +231,105 @@ namespace MVC8amKings.Controllers
             return Content(id.ToString());
         }
 
-        public ActionResult getmeView3() {
-            return View();
+        public ActionResult getmeView3()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Trupti";
+            obj.EmpSalary = 578000;
+
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Dash";
+            obj1.EmpSalary = 538000;
+
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Namaithullah";
+            obj2.EmpSalary = 378000;
+
+
+            EmployeeModel obj3 = new EmployeeModel();
+            obj3.EmpId = 4;
+            obj3.EmpName = "ElayRaja";
+            obj3.EmpSalary = 478000;
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+            listEmp.Add(obj);
+            listEmp.Add(obj1);
+            listEmp.Add(obj2);
+            listEmp.Add(obj3);
+
+            return View(listEmp);
+        }
+        public PartialViewResult getmeView4()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Trupti";
+            obj.EmpSalary = 578000;
+
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Dash";
+            obj1.EmpSalary = 538000;
+
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Namaithullah";
+            obj2.EmpSalary = 378000;
+
+
+            EmployeeModel obj3 = new EmployeeModel();
+            obj3.EmpId = 4;
+            obj3.EmpName = "ElayRaja";
+            obj3.EmpSalary = 478000;
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+            listEmp.Add(obj);
+            listEmp.Add(obj1);
+            listEmp.Add(obj2);
+            listEmp.Add(obj3);
+
+            return PartialView("_myPartialView", listEmp);
+        }
+
+       public JsonResult getmejsonData()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Trupti";
+            obj.EmpSalary = 578000;
+
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Dash";
+            obj1.EmpSalary = 538000;
+
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Namaithullah";
+            obj2.EmpSalary = 378000;
+
+
+            EmployeeModel obj3 = new EmployeeModel();
+            obj3.EmpId = 4;
+            obj3.EmpName = "ElayRaja";
+            obj3.EmpSalary = 478000;
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+            listEmp.Add(obj);
+            listEmp.Add(obj1);
+            listEmp.Add(obj2);
+            listEmp.Add(obj3);
+
+            return Json(listEmp, JsonRequestBehavior.AllowGet);
         }
     }
 }
