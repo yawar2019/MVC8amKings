@@ -331,5 +331,81 @@ namespace MVC8amKings.Controllers
 
             return Json(listEmp, JsonRequestBehavior.AllowGet);
         }
+        public FileResult getMeFile() {
+
+            return File("~/Web.config","text");
+        }
+        public FileResult getMeFile1()
+        {
+
+            return File("~/Web.config", "application/xml");
+        }
+        public FileResult getMeFile2()
+        {
+
+            return File("~/ActionResult.pdf", "application/pdf","ActionResult.pdf");
+        }
+
+        public RedirectToRouteResult getmetoy() {
+
+            return RedirectToAction("getMeFile1");
+        }
+        public RedirectToRouteResult getmetoy2()
+        {
+
+            return RedirectToAction("index","Default");
+        }
+        public RedirectToRouteResult getmetoy3()
+        {
+
+            return RedirectToAction("index", "Default", new { id = 1 });
+        }
+
+        public RedirectToRouteResult getmetoy4()
+        {
+            EmployeeModel obj3 = new EmployeeModel();
+            obj3.EmpId = 4;
+            obj3.EmpName = "ElayRaja";
+            obj3.EmpSalary = 478000;
+
+            return RedirectToAction("index2", "Default", obj3);
+        }
+
+
+        public RedirectToRouteResult getmetoy5()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Trupti";
+            obj.EmpSalary = 578000;
+
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Dash";
+            obj1.EmpSalary = 538000;
+
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Namaithullah";
+            obj2.EmpSalary = 378000;
+
+
+            EmployeeModel obj3 = new EmployeeModel();
+            obj3.EmpId = 4;
+            obj3.EmpName = "ElayRaja";
+            obj3.EmpSalary = 478000;
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+            listEmp.Add(obj);
+            listEmp.Add(obj1);
+            listEmp.Add(obj2);
+            listEmp.Add(obj3);
+
+            return RedirectToAction("index3", "Default", listEmp);
+        }
+
+     
     }
 }

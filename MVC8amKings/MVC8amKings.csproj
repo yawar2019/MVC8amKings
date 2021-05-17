@@ -126,6 +126,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="ActionResult.pdf" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -169,6 +170,7 @@
     <Content Include="Views\New\getmeView2.cshtml" />
     <Content Include="Views\New\getmeView3.cshtml" />
     <Content Include="Views\Shared\_myPartialView.cshtml" />
+    <Content Include="Views\Default\Index2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
