@@ -406,6 +406,22 @@ namespace MVC8amKings.Controllers
             return RedirectToAction("index3", "Default", listEmp);
         }
 
+        public ContentResult getData(int?id)
+        {
+            if (id == 1)
+            {
+                return Content("hello World");
+            }
+            else if(id==2)
+            {
+                return Content("<p style=color:red>tiger</p>");
+            }
+            else
+            {
+                return Content("<script>alert('hello World')</script>");
+
+            }
+        }
      
     }
 }

@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdoExampleController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\NewController.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +172,7 @@
     <Content Include="Views\New\getmeView3.cshtml" />
     <Content Include="Views\Shared\_myPartialView.cshtml" />
     <Content Include="Views\Default\Index2.cshtml" />
+    <Content Include="Views\AdoExample\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
