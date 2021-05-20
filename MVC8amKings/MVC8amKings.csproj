@@ -173,6 +173,8 @@
     <Content Include="Views\Shared\_myPartialView.cshtml" />
     <Content Include="Views\Default\Index2.cshtml" />
     <Content Include="Views\AdoExample\Index.cshtml" />
+    <Content Include="Views\AdoExample\Create.cshtml" />
+    <Content Include="Views\AdoExample\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

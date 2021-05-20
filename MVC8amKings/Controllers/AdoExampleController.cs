@@ -15,5 +15,30 @@ namespace MVC8amKings.Controllers
         {
             return View(db.getEmployees());
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(EmployeeModel emp)
+        {
+            int i = db.SaveEmployee(emp);
+            if (i > 0)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            EmployeeModel emp = db.getEmployeeById(id);
+            return View(emp);
+        }
     }
 }
