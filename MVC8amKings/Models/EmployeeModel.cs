@@ -70,5 +70,33 @@ namespace MVC8amKings.Models
             }
             return emp;
         }
+
+        
+
+             public int UpdateEmployee(EmployeeModel emp)
+        {
+            SqlCommand cmd = new SqlCommand("sp_RajaUpdateEmployee", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpId", emp.EmpId);
+            cmd.Parameters.AddWithValue("@EmpName", emp.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary", emp.EmpSalary);
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+
+        public int deleteEmployee(int? id)
+        {
+            SqlCommand cmd = new SqlCommand("sp_RajaDeleteEmployee", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpId", id);
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+
+        
     }
 }
