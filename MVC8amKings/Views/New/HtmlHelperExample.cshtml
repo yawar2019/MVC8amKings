@@ -1,0 +1,16 @@
+﻿@model MVC8amKings.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<h2>HtmlHelperExample</h2>
+
+<script>
+    function fun() {
+        alert('Hi Guys');
+    }
+</script>
+<input type="text" name="EmpName" value="Trupti" style="background-color:purple;color:white" class="form-control" onclick="fun()" /><br />
+@Html.TextBox("LastName","ElayRaja",new { style = "background-color:purple;color:white",@class="form-control", onclick = "fun()" })<br />
+@Html.TextBoxFor(s=>s.EmpName, new { style = "background-color:purple;color:white", @class = "form-control", onclick = "fun()" } )
+@Html.EditorFor(s => s.status, new { style = "background-color:purple;color:white", @class = "form-control", onclick = "fun()" })

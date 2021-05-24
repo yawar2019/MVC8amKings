@@ -422,6 +422,13 @@ namespace MVC8amKings.Controllers
 
             }
         }
-     
+
+        public ActionResult HtmlHelperExample()
+        {
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpName = "Vinay";
+            return View(emp);
+        }
+        
     }
 }
