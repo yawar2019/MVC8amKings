@@ -425,8 +425,10 @@ namespace MVC8amKings.Controllers
 
         public ActionResult HtmlHelperExample()
         {
+            EmpDetail db = new EmpDetail();
             EmployeeModel emp = new EmployeeModel();
             emp.EmpName = "Vinay";
+            ViewBag.Countries = new SelectList(db.getEmployees(), "EmpId", "EmpName",35035);
             return View(emp);
         }
         

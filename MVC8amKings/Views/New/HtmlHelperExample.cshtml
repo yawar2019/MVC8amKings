@@ -13,4 +13,23 @@
 <input type="text" name="EmpName" value="Trupti" style="background-color:purple;color:white" class="form-control" onclick="fun()" /><br />
 @Html.TextBox("LastName","ElayRaja",new { style = "background-color:purple;color:white",@class="form-control", onclick = "fun()" })<br />
 @Html.TextBoxFor(s=>s.EmpName, new { style = "background-color:purple;color:white", @class = "form-control", onclick = "fun()" } )
-@Html.EditorFor(s => s.status, new { style = "background-color:purple;color:white", @class = "form-control", onclick = "fun()" })
+@Html.EditorFor(s => s.status, new { style = "background-color:purple;color:white", @class = "form-control", onclick = "fun()" })<br />
+@Html.LabelFor(x=>x.EmpName)
+@Html.Password("pwd","japan")<br />
+<span>Courses</span>@Html.CheckBox("DotNet", true)<span>DotNet</span>@Html.CheckBox("Java", true)<span>Java</span><br />
+<span>Gender</span>@Html.RadioButton("Gender","Male", new {id="rbmale" })<span>Male</span>@Html.RadioButton("Gender", "FeMale")<span>FeMale</span>@Html.RadioButton("Gender", "Other")<span>Others</span>
+<br />
+@Html.DropDownList("Country",new List<SelectListItem>() {
+
+    new SelectListItem {Text="India",Value="India" },
+    new SelectListItem {Text="japan",Value="japan",Selected=true },
+    new SelectListItem {Text="Us",Value="US" }
+},"Select Country")
+
+<br />
+
+@Html.DropDownList("Countries")
+
+
+
+ 

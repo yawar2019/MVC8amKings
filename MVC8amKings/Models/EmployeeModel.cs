@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC8amKings.Models
 {
     public class EmployeeModel
     {
         public int EmpId { get; set; }
+        [Display(Name ="Employee Name")]
         public string EmpName { get; set; }
         public int EmpSalary { get; set; }
         public bool status { get; set; }
