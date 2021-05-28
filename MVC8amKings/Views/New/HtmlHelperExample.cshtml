@@ -1,4 +1,5 @@
-﻿@model MVC8amKings.Models.EmployeeModel
+﻿@using MVC8amKings.CustomHelpers
+@model MVC8amKings.Models.EmployeeModel
 @{
     ViewBag.Title = "HtmlHelperExample";
 }
@@ -31,5 +32,14 @@
 @Html.DropDownList("Countries")
 
 
-
+<br />
+@myhtmlhelper.MyLabel("I Accept the Agreement")<br />@*//static method*@
+@Html.createUrControl("text")<br />
+@Html.createUrControl("checkbox")<br />@*//HtmlHelper *@
+@Html.createUrControl("file")<br />
  
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is james")@*//helper*@
