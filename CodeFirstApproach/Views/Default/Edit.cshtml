@@ -1,0 +1,18 @@
+﻿@model CodeFirstApproach.Models.EmployeeModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Edit </h2>
+@using (Html.BeginForm("Edit", "Default", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.EmpId)
+    @Html.Label("EmpName")
+    @Html.TextBox("EmpName", Model.EmpName, new { @class = "form-control" })<br />
+
+    @Html.LabelFor(x => x.EmpSalary)
+    @Html.EditorFor(x => x.EmpSalary, new { htmlAttributes = new { @class = "form-control" } })
+    <input type="submit" value="Update" class="btn btn-success" />
+
+}
+
