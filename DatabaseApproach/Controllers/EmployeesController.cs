@@ -15,6 +15,23 @@ namespace DatabaseApproach.Controllers
         private TruptiDBEntities db = new TruptiDBEntities();
 
         // GET: Employees
+
+        public ActionResult AllEmpAndDept()
+        {
+            var Records = (from emp in db.Employees
+                          join dept in db.Departments
+                          on emp.DeptId equals dept.DeptId
+                          select new EmpDept
+                          {
+                              EmpId = emp.EmpId,
+                              EmpName=emp.EmpName,
+                              EmpSalary=emp.EmpSalary,
+                              DeptId=dept.DeptId,
+                              DeptName=dept.DeptName
+                          }).ToList();
+            return View(Records);
+
+        }
         public ActionResult Index()
         {
             return View(db.Employees.ToList());

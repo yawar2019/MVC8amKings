@@ -179,6 +179,8 @@
     <Content Include="Views\AdoExample\Edit.cshtml" />
     <Content Include="Views\AdoExample\Delete.cshtml" />
     <Content Include="Views\New\HtmlHelperExample.cshtml" />
+    <Content Include="Views\New\TempDataExample.cshtml" />
+    <Content Include="Views\New\TempDataExample2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

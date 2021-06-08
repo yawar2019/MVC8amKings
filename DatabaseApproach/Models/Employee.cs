@@ -18,5 +18,6 @@ namespace DatabaseApproach.Models
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
         public string Designation { get; set; }
+        public Nullable<int> DeptId { get; set; }
     }
 }

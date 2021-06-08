@@ -431,6 +431,27 @@ namespace MVC8amKings.Controllers
             ViewBag.Countries = new SelectList(db.getEmployees(), "EmpId", "EmpName",35035);
             return View(emp);
         }
-        
+
+        public ActionResult TempDataExample()
+        {
+            ViewBag.LastName = "Brand";
+            ViewData["FirstName"] = "Dsouza";
+            TempData["UserName"] = "james";
+
+            return RedirectToAction("TempDataExample2");
+        }
+
+        public ActionResult TempDataExample2()
+        {
+            string data = ViewBag.LastName;
+            string data1 = (string)ViewData["FirstName"];
+            string data2 = (string)TempData["UserName"];
+
+            ViewBag.info =data;
+            ViewBag.info1 =data1;
+            ViewBag.info2 =data2;
+
+            return View();
+        }
     }
 }

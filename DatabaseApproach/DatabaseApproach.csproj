@@ -173,6 +173,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmpDept.cs" />
     <Compile Include="Models\Employee.cs">
       <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
@@ -207,6 +211,7 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\AllEmpAndDept.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
