@@ -445,11 +445,23 @@ namespace MVC8amKings.Controllers
         {
             string data = ViewBag.LastName;
             string data1 = (string)ViewData["FirstName"];
-            string data2 = (string)TempData["UserName"];
 
-            ViewBag.info =data;
-            ViewBag.info1 =data1;
-            ViewBag.info2 =data2;
+            // TempData.Keep();for all tempdata to retain
+            //string data2 = TempData.Peek("UserName").ToString();//only for specific
+
+            ViewBag.info =  data;
+            ViewBag.info1 = data1;
+
+            string data3 = (string)TempData["UserName"];
+
+            return RedirectToAction("TempDataExample3");
+        }
+
+        public ActionResult TempDataExample3()
+        {
+            string data2 = (string)TempData["UserName"];
+            ViewBag.info2 = data2;
+
 
             return View();
         }
