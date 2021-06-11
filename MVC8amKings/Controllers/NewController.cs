@@ -459,9 +459,10 @@ namespace MVC8amKings.Controllers
 
         public ActionResult TempDataExample3()
         {
-            string data2 = (string)TempData["UserName"];
-            ViewBag.info2 = data2;
+            //string data2 = (string)TempData["UserName"];
+            ViewBag.info2 = "hello";
 
+            string data3 = (string)TempData["UserName"];
 
             return View();
         }
