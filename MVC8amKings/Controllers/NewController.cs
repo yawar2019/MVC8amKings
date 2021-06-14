@@ -4,8 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVC8amKings.Models;
+using MVC8amKings.Filter;
+using System.Web.Security;
+
 namespace MVC8amKings.Controllers
 {
+   
+
     public class NewController : Controller
     {
         // GET: New
@@ -17,6 +22,7 @@ namespace MVC8amKings.Controllers
             return "Hello to All";
         }
 
+        [CustomFilter]
         private int helloworld2()
         {
 
@@ -33,9 +39,9 @@ namespace MVC8amKings.Controllers
             return 1211;
         }
 
-
         public ActionResult getView()
         {
+            CustomFilter obj = new Filter.CustomFilter();
 
             return View();
         }
@@ -466,5 +472,38 @@ namespace MVC8amKings.Controllers
 
             return View();
         }
+        public ActionResult MyPlayer()
+        {
+            ViewBag.Player = "Dhoni";
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(UserDetail user)
+        {
+            EmployeeEntities db = new EmployeeEntities();
+            UserDetail u = db.UserDetails.Where(x => x.UserName == user.UserName && x.Password == user.Password).SingleOrDefault();
+            if (u != null)
+            {
+                FormsAuthentication.SetAuthCookie(u.UserName, false);
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [Authorize(Roles ="Admin")]
+        public ActionResult DashBoard()
+        {
+            return View();
+        }
+
     }
 }
