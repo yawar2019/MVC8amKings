@@ -499,11 +499,34 @@ namespace MVC8amKings.Controllers
             }
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin,Manager")]
         public ActionResult DashBoard()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Manager")]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("~/New/Login");
+        }
+
+        [OutputCache(Duration =20,Location =System.Web.UI.OutputCacheLocation.Client)]
+        public ActionResult GetCacheExample()
+        {
+            return View();
+        }
     }
 }

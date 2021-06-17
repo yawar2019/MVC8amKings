@@ -176,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomRoleProvider.cs" />
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmpDept.cs" />
     <Compile Include="Models\EmployeeModel.Context.cs">
@@ -192,6 +193,9 @@
     <Compile Include="Models\EmployeeModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
       <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserDetail.cs">
@@ -236,6 +240,8 @@
     <Content Include="Views\New\MyPlayer.cshtml" />
     <Content Include="Views\New\Login.cshtml" />
     <Content Include="Views\New\DashBoard.cshtml" />
+    <Content Include="Views\New\About.cshtml" />
+    <Content Include="Views\New\GetCacheExample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
