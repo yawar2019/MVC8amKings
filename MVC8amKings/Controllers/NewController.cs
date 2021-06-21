@@ -528,5 +528,29 @@ namespace MVC8amKings.Controllers
         {
             return View();
         }
+
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(RegistrationModel reg)
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("~/new/ValidationExample");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult GetWebService()
+        {
+            ServiceReference1.EmployeeDetailServiceSoapClient obj = new ServiceReference1.EmployeeDetailServiceSoapClient();
+            List<ServiceReference1.EmployeeModel> listObj=obj.getEmployees().ToList();
+            return View(listObj);
+        }
     }
 }
