@@ -552,5 +552,12 @@ namespace MVC8amKings.Controllers
             List<ServiceReference1.EmployeeModel> listObj=obj.getEmployees().ToList();
             return View(listObj);
         }
+         
+        public ActionResult GetWcfService()
+        {
+            ServiceReference2.MyServiceClient obj = new ServiceReference2.MyServiceClient();
+            var listObj = obj.Add(12, 45);
+            return Content(listObj.ToString());
+        }
     }
 }
